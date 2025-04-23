@@ -3,7 +3,7 @@
 This file serves as a central index for cross-references between OBINexus components.
 
 ## Components
-- [[paradigm_translation_unit]]
+- [[dop_adapter]]
 - [[libpolycall]]
 - [[nexus-search]]
 - [[hypenum]]
