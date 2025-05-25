@@ -1,0 +1,116 @@
+# OBINexus Documentation Portal - Jekyll Configuration
+# Minimal configuration for GitHub Pages compatibility
+
+title: "OBINexus Documentation Portal"
+description: "Connection through technology - modular ecosystem documentation"
+url: "https://obinenxus.github.io"
+baseurl: "/obinenxu"
+
+# Repository information
+repository: "obinenxus/obinenxu"
+github:
+  owner_name: "obinenxus"
+  repository_name: "obinenxu"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+sass:
+  style: compressed
+
+# Plugins for GitHub Pages
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Collections for modular documentation structure
+collections:
+  computing:
+    output: true
+    permalink: /:collection/:name/
+  publishing:
+    output: true
+    permalink: /:collection/:name/
+  uche-nnamdi:
+    output: true
+    permalink: /:collection/:name/
+
+# Default layouts (optional)
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: "docs"
+    values:
+      layout: "division"
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - LICENSE
+  - .gitignore
+  - .github/
+  - scripts/
+  - node_modules/
+  - package.json
+  - package-lock.json
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+
+# Include files that start with underscore (if needed)
+include:
+  - _data/
+  - _includes/
+
+# Permalink style
+permalink: /:categories/:title/
+
+# Timezone
+timezone: UTC
+
+# Liquid options
+liquid:
+  error_mode: warn
+  strict_filters: false
+
+# GitHub Pages safe mode
+safe: true
+incremental: false
+profile: false
+
+# SEO and social
+author: "OBINexus"
+twitter:
+  username: obinenxus
+social:
+  name: "OBINexus"
+  links:
+    - "https://github.com/obinenxus"
+    - "https://obinexus.org"
+
+# Analytics (optional)
+google_analytics: # Add your GA tracking ID if needed
+
+# Theme (using default GitHub Pages themes)
+theme: minima
+
+# Custom variables for site-wide use
+obinexus:
+  divisions:
+    - name: "computing"
+      title: "Computing"
+      icon: "?"
+      description: "Modular development tools and system architectures"
+    - name: "publishing"
+      title: "Publishing"
+      icon: "??"
+      description: "Deep logic storytelling and technical documentation"
+    - name: "uche-nnamdi"
+      title: "UCHE Nnamdi"
+      icon: "??"
+      description: "Cultural fashion bridging heritage and technology"
