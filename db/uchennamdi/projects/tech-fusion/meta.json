@@ -1,0 +1,13 @@
+{
+  "name": "Tech Fusion Collection",
+  "division": "uchennamdi", 
+  "status": "development",
+  "version": "0.8.0",
+  "description": "Modern clothing designs integrating technological aesthetic elements",
+  "repository": "https://github.com/obinenxus/tech-fusion",
+  "documentation": "/docs/uche-nnamdi/projects/tech-fusion/",
+  "maintainers": ["nnamdi.okpala"],
+  "dependencies": [],
+  "tags": ["fashion", "cultural-heritage", "tech-fusion"],
+  "last_updated": "2025-05-25"
+}

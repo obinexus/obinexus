@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBINexus - Site Under Construction</title>
+    <meta name="description" content="OBINexus main site under construction. Access our documentation portal for project information and development resources.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="canonical" href="https://obinexus.org">
+    <meta property="og:title" content="OBINexus - Connection Through Technology">
+    <meta property="og:description" content="Modular ecosystem bridging computing, culture, and creativity. Main site under construction.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://obinexus.org">
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --dark-bg: #0a0f1c;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --border-color: rgba(255, 255, 255, 0.1);
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --warning-color: #f59e0b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(118, 75, 162, 0.1) 0%, transparent 50%);
+        }
+
+        .maintenance-container {
+            max-width: 600px;
+            padding: 3rem 2rem;
+            text-align: center;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(245, 158, 11, 0.2);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            color: var(--warning-color);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            margin-bottom: 2rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--warning-color);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .main-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary-gradient);
+            color: var(--text-primary);
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1rem;
+        }
+
+        .info-card h4 {
+            font-size: 0.875rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .info-card p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .footer-note {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tech-tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .maintenance-container {
+                margin: 1rem;
+                padding: 2rem 1.5rem;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .main-title {
+                font-size: 1.5rem;
+            }
+            
+            .description {
+                font-size: 1rem;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Meta redirection after 10 seconds for better UX */
+        .countdown {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-top: 1rem;
+        }
+    </style>
+    <!-- Optional: Automatic redirect after 30 seconds -->
+    <script>
+        // Uncomment the next line to enable automatic redirect
+        // setTimeout(() => window.location.href = "https://obinenxus.github.io/obinenxu", 30000);
+        
+        // Optional countdown display
+        let countdown = 30;
+        const countdownElement = document.querySelector('.countdown');
+        if (countdownElement) {
+            const timer = setInterval(() => {
+                countdown--;
+                if (countdown > 0) {
+                    countdownElement.textContent = `Auto-redirect to documentation in ${countdown}s (disabled for demo)`;
+                } else {
+                    clearInterval(timer);
+                    countdownElement.textContent = 'Redirect disabled for demonstration';
+                }
+            }, 1000);
+        }
+    </script>
+</head>
+<body>
+    <div class="maintenance-container">
+        <div class="logo">OBINexus</div>
+        
+        <div class="status-badge">
+            <span class="status-dot"></span>
+            <span>Main Site Under Construction</span>
+        </div>
+        
+        <h1 class="main-title">Systems Architecture in Progress</h1>
+        
+        <p class="description">
+            Our primary web platform is undergoing systematic development following waterfall methodology principles. 
+            During this construction phase, access our comprehensive documentation portal for complete project specifications, 
+            repository access, and technical architecture details.
+        </p>
+        
+        <a href="https://obinenxus.github.io/obinenxu" class="cta-button">
+            <span>Access Documentation Portal</span>
+            <span></span>
+        </a>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <h4>Computing Division</h4>
+                <p>RiftLang, OBIX, LibPolyCall development status</p>
+            </div>
+            <div class="info-card">
+                <h4>Architecture</h4>
+                <p>Non-monolithic business structure implementation</p>
+            </div>
+            <div class="info-card">
+                <h4>Documentation</h4>
+                <p>Complete technical specifications via GitHub Pages</p>
+            </div>
+        </div>
+        
+        <div class="tech-stack">
+            <span class="tech-tag">GitHub Pages</span>
+            <span class="tech-tag">IONOS FTP</span>
+            <span class="tech-tag">Modular Architecture</span>
+            <span class="tech-tag">GDPR Compliant</span>
+        </div>
+        
+        <div class="footer-note">
+            <p><strong>OBINexus:</strong> Connection through technology</p>
+            <p>Bridging computing, culture, and creativity through systematic development approaches</p>
+            <div class="countdown"></div>
+        </div>
+    </div>
+</body>
+</html>

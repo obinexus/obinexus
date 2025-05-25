@@ -1,0 +1,28 @@
+{
+  "name": "land.obinexus.org",
+  "version": "0.1.0",
+  "description": "OBINexus",
+  "keywords": [],
+  "license": "ISC",
+  "author": "OBINexus",
+  "homepage": "https://obinexus.org",
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.com/obinexus.www/obinexus.git"
+  },
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --emptyOutDir",
+    "preview": "vite preview",
+    "publish": "npm publish"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "@vitejs/plugin-vue": "^5.2.3",
+    "sass": "^1.87.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.3"
+  }
+}

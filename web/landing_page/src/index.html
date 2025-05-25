@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OBINexus - From the Heart, To the World. Founded by Nnamdi Michael Okpala.">
+    <title>OBINexus | From the Heart, To the World</title>
+    <link rel="stylesheet" href="./core/styles/main.scss">
+    <style>
+        :root {
+            /* Light Theme Variables */
+            --light-background: #ffffff;
+            --light-text: #2c5282;
+            --light-secondary: #4a5568;
+            --light-card: #f8fafc;
+            --light-accent: #F71735;
+            --light-border: rgba(89, 65, 87, 0.2);
+            
+            /* Dark Theme Variables */
+            --dark-background: #1a202c;
+            --dark-text: #f8fafc;
+            --dark-secondary: #e2e8f0;
+            --dark-card: #2d3748;
+            --dark-accent: #f94561;
+            --dark-border: rgba(226, 232, 240, 0.2);
+            
+            /* Current Theme (defaults to light) */
+            --background: var(--light-background);
+            --text: var(--light-text);
+            --secondary: var(--light-secondary);
+            --card: var(--light-card);
+            --accent: var(--light-accent);
+            --border: var(--light-border);
+        }
+        
+        /* Reset and Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            transition: background-color 0.5s, color 0.5s;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+        
+        /* Skip to main content link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--accent);
+            color: white;
+            padding: 8px;
+            z-index: 1000;
+            transition: top 0.3s;
+        }
+        
+        .skip-link:focus {
+            top: 0;
+        }
+        
+        /* WebGL Canvas Container */
+        .rising-sun-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        /* Landing Content */
+        .landing-content {
+            height: 100vh;
+            width: 100%;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Header */
+        .landing-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .logo {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo h1 {
+            font-size: 2rem;
+            color: var(--accent);
+            margin: 0;
+            font-weight: 700;
+        }
+        
+        .logo p {
+            font-size: 1rem;
+            margin: 0;
+        }
+        
+        /* Theme Toggle */
+        .theme-toggle {
+            background: var(--card);
+            border: none;
+            border-radius: 50%;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: opacity 0.3s;
+            color: var(--text);
+        }
+        
+        .theme-toggle:hover {
+            opacity: 0.8;
+        }
+        
+        /* Main Content */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .headline {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .sub-headline {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--secondary);
+        }
+        
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 1rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1.125rem;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--accent-hover, var(--accent));
+            transform: translateY(-2px);
+        }
+        
+        .cta-button:focus {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+        
+        /* Navigation */
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .nav-button {
+            background: var(--card);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+            font-weight: 500;
+        }
+        
+        .nav-button:hover {
+            background-color: var(--card-hover, var(--card));
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        .landing-footer {
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.875rem;
+        }
+        
+        /* Heart Icon Animation */
+        .heart-icon {
+            display: inline-block;
+            width: 20px;
+            height: 18px;
+            position: relative;
+            margin: 0 5px;
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        .heart-icon:before,
+        .heart-icon:after {
+            content: "";
+            background-color: var(--accent);
+            border-radius: 50% 50% 0 0;
+            position: absolute;
+            left: 10px;
+            top: 0;
+            width: 10px;
+            height: 16px;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+        
+        .heart-icon:after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            14% { transform: scale(1.1); }
+            28% { transform: scale(1); }
+            42% { transform: scale(1.1); }
+            70% { transform: scale(1); }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .headline {
+                font-size: 2rem;
+            }
+            
+            .sub-headline {
+                font-size: 1.25rem;
+            }
+            
+            .landing-content {
+                padding: 1rem;
+            }
+            
+            .main-content {
+                padding: 1rem;
+            }
+        }
+        
+        /* Moon Icon */
+        .moon-icon {
+            display: block;
+            width: 18px;
+            height: 18px;
+            background: transparent;
+            box-shadow: inset -3px -3px 0 0 var(--text);
+            border-radius: 50%;
+            position: relative;
+            margin: 2px;
+        }
+        
+        /* Sun Icon */
+        .sun-icon {
+            display: block;
+            width: 18px;
+            height: 18px;
+            background: var(--text);
+            border-radius: 50%;
+            position: relative;
+            margin: 2px;
+        }
+        
+        .sun-icon:before {
+            content: "";
+            position: absolute;
+            top: -4px;
+            left: 50%;
+            width: 2px;
+            height: 4px;
+            margin-left: -1px;
+            background: var(--text);
+        }
+        
+        .sun-icon:after {
+            content: "";
+            position: absolute;
+            top: 18px;
+            left: 50%;
+            width: 2px;
+            height: 4px;
+            margin-left: -1px;
+            background: var(--text);
+        }
+        
+        .hide {
+            display: none;
+        }
+
+        /* Overlay for better readability with WebGL background */
+        .content-overlay {
+            background-color: rgba(var(--background-rgb, 255, 255, 255), 0.7);
+            backdrop-filter: blur(5px);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Light theme background RGB value */
+        :root {
+            --background-rgb: 255, 255, 255;
+        }
+        
+        /* Dark theme background RGB value */
+        .dark-theme {
+            --background-rgb: 26, 32, 44;
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <!-- WebGL Rising Sun Animation Container -->
+    <div id="rising-sun-container" class="rising-sun-container" aria-hidden="true"></div>
+    
+    <!-- Main Landing Content -->
+    <div class="landing-content">
+        <!-- Header -->
+        <header class="landing-header">
+            <div class="logo">
+                <h1>OBINexus</h1>
+                <p>From the <span class="heart-icon"></span> to the World</p>
+            </div>
+            
+            <!-- Theme Toggle Button -->
+            <button class="theme-toggle" aria-label="Toggle dark theme" id="theme-toggle">
+                <span class="moon-icon" id="moon-icon"></span>
+                <span class="sun-icon hide" id="sun-icon"></span>
+            </button>
+        </header>
+        
+        <!-- Main Content -->
+        <main id="main" class="main-content">
+            <div class="content-overlay">
+                <h2 class="headline">Build with Purpose, Run with Heart</h2>
+                <p class="sub-headline">OBINexus is a unified ecosystem for computing, fashion, and publishing, powered by culture, integrity, and innovation.</p>
+                
+                <a href="#explore" class="cta-button">Explore OBINexus</a>
+                
+                <div class="nav-buttons">
+                    <a href="#computing" class="nav-button">Computing</a>
+                    <a href="#fashion" class="nav-button">Fashion</a>
+                    <a href="#publishing" class="nav-button">Publishing</a>
+                    <a href="#contact" class="nav-button">Contact</a>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="landing-footer">
+            <p>&copy; <span id="current-year"></span> OBINexus Computing. All rights reserved.</p>
+            <p>A vision by Nnamdi Michael Okpala</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Theme Toggle Function
+        const themeToggle = document.getElementById('theme-toggle');
+        const moonIcon = document.getElementById('moon-icon');
+        const sunIcon = document.getElementById('sun-icon');
+        let isDarkTheme = false;
+        
+        themeToggle.addEventListener('click', function() {
+            isDarkTheme = !isDarkTheme;
+            
+            if (isDarkTheme) {
+                document.documentElement.style.setProperty('--background', 'var(--dark-background)');
+                document.documentElement.style.setProperty('--text', 'var(--dark-text)');
+                document.documentElement.style.setProperty('--secondary', 'var(--dark-secondary)');
+                document.documentElement.style.setProperty('--card', 'var(--dark-card)');
+                document.documentElement.style.setProperty('--accent', 'var(--dark-accent)');
+                document.documentElement.style.setProperty('--border', 'var(--dark-border)');
+                document.body.classList.add('dark-theme');
+                
+                moonIcon.classList.add('hide');
+                sunIcon.classList.remove('hide');
+            } else {
+                document.documentElement.style.setProperty('--background', 'var(--light-background)');
+                document.documentElement.style.setProperty('--text', 'var(--light-text)');
+                document.documentElement.style.setProperty('--secondary', 'var(--light-secondary)');
+                document.documentElement.style.setProperty('--card', 'var(--light-card)');
+                document.documentElement.style.setProperty('--accent', 'var(--light-accent)');
+                document.documentElement.style.setProperty('--border', 'var(--light-border)');
+                document.body.classList.remove('dark-theme');
+                
+                moonIcon.classList.remove('hide');
+                sunIcon.classList.add('hide');
+            }
+        });
+    </script>
+    
+    <!-- Import the main TypeScript entry point -->
+    <script type="module" src="./index.ts"></script>
+</body>
+</html>

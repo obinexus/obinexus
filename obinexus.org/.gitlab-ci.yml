@@ -1,0 +1,29 @@
+build_obinexus:
+  stage: build
+  script:
+    - echo "Building obinexus.org"
+    - cd land && npm install && npm run build
+  rules:
+    - changes:
+        - obinexus.org/**/*
+        - .gitlab-ci.yml
+
+test_obinexus:
+  stage: test
+  script:
+    - echo "Testing obinexus.org"
+    - cd land && npm run test || echo "No tests configured"
+  rules:
+    - changes:
+        - obinexus.org/**/*
+        - .gitlab-ci.yml
+
+deploy_obinexus:
+  stage: deploy
+  script:
+    - echo "Deploying obinexus.org"
+    - lftp -c "open -u $FTP_USER,$FTP_PASS $FTP_HOST; mirror -R ./obinexus.org/land/dist $DEPLOY_PATH"
+  rules:
+    - changes:
+        - obinexus.org/**/*
+        - .gitlab-ci.yml

@@ -1,0 +1,28 @@
+# filepath: /home/nnamdi/projects/obinexus/www/obinexus/api.obinexus.org/.gitlab-ci.yml
+build_api:
+  stage: build
+  script:
+	- echo "Building api.obinexus.org"
+  rules:
+	- changes:
+		- api.obinexus.org/**/*
+		- .gitlab-ci.yml
+
+test_api:
+  stage: test
+  script:
+	- echo "Testing api.obinexus.org"
+  rules:
+	- changes:
+		- api.obinexus.org/**/*
+		- .gitlab-ci.yml
+
+deploy_api:
+  stage: deploy
+  script:
+	- echo "Deploying api.obinexus.org"
+	- lftp -c "open -u $FTP_USER,$FTP_PASS $FTP_HOST; mirror -R ./api.obinexus.org/public $DEPLOY_PATH"
+  rules:
+	- changes:
+		- api.obinexus.org/**/*
+		- .gitlab-ci.yml

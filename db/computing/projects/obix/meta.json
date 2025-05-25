@@ -1,0 +1,13 @@
+{
+  "name": "OBIX",
+  "division": "computing", 
+  "status": "active",
+  "version": "0.2.0",
+  "description": "Object-based interface exchange system for seamless component communication",
+  "repository": "https://github.com/obinenxus/obix",
+  "documentation": "/docs/computing/projects/obix/",
+  "maintainers": ["nnamdi.okpala"],
+  "dependencies": [],
+  "tags": ["language", "framework", "interoperability"],
+  "last_updated": "2025-05-25"
+}

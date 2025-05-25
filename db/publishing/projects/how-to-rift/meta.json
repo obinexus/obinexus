@@ -1,0 +1,13 @@
+{
+  "name": "How to RIFT",
+  "division": "publishing",
+  "status": "development",
+  "version": "0.3.0", 
+  "description": "Deep logic storytelling and technical documentation guide",
+  "repository": "https://github.com/obinenxus/how-to-rift",
+  "documentation": "/docs/publishing/projects/how-to-rift/",
+  "maintainers": ["nnamdi.okpala"],
+  "dependencies": [],
+  "tags": ["documentation", "storytelling", "technical-writing"],
+  "last_updated": "2025-05-25"
+}

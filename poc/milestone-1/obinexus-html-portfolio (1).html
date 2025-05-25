@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBINexus Portfolio</title>
+    <style>
+        :root {
+            /* Light Theme Variables */
+            --light-background: #ffffff;
+            --light-text: #2c5282;
+            --light-secondary: #4a5568;
+            --light-card: #f8fafc;
+            --light-accent: #F71735;
+            --light-border: rgba(89, 65, 87, 0.2);
+            
+            /* Dark Theme Variables */
+            --dark-background: #1a202c;
+            --dark-text: #f8fafc;
+            --dark-secondary: #e2e8f0;
+            --dark-card: #2d3748;
+            --dark-accent: #f94561;
+            --dark-border: rgba(226, 232, 240, 0.2);
+            
+            /* Current Theme (defaults to light) */
+            --background: var(--light-background);
+            --text: var(--light-text);
+            --secondary: var(--light-secondary);
+            --card: var(--light-card);
+            --accent: var(--light-accent);
+            --border: var(--light-border);
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background);
+            color: var(--text);
+            transition: background-color 0.5s, color 0.5s;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+        
+        .logo h1 {
+            color: var(--accent);
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        
+        .logo p {
+            font-size: 1.25rem;
+            margin: 0.5rem 0 0 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .theme-toggle {
+            background: var(--card);
+            border: none;
+            border-radius: 50%;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: opacity 0.3s;
+            color: var(--text);
+        }
+        
+        .theme-toggle:hover {
+            opacity: 0.8;
+        }
+        
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .tab-button {
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            background: var(--card);
+            color: var(--text);
+            border: none;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            text-transform: capitalize;
+        }
+        
+        .tab-button.active {
+            background: var(--accent);
+            color: white;
+            font-weight: 700;
+        }
+        
+        .content-area {
+            background: var(--card);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.5s;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        h3, h4 {
+            color: var(--accent);
+        }
+        
+        .footer {
+            margin-top: 3rem;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+        
+        .footer p:last-child {
+            color: var(--secondary);
+            margin-top: 0.5rem;
+        }
+        
+        /* Service Cards */
+        .service-card {
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            background: var(--card);
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: opacity 0.3s;
+        }
+        
+        .service-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .service-icon {
+            margin-right: 0.75rem;
+            color: var(--accent);
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .service-title {
+            margin: 0;
+        }
+        
+        .service-tagline {
+            margin: 0;
+            font-size: 0.875rem;
+            font-style: italic;
+            color: var(--secondary);
+        }
+        
+        /* Initiatives Grid */
+        .initiatives-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .initiatives-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .initiative-card {
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            background: var(--card);
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .initiative-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .initiative-icon {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .initiative-icon-bg {
+            background-color: rgba(247, 23, 53, 0.1);
+            color: var(--accent);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Partnership Tiers */
+        .tier-card {
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            background: var(--card);
+            border: 1px solid var(--border);
+            margin-bottom: 2rem;
+            transition: transform 0.3s;
+        }
+        
+        .tier-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .tier-badge {
+            font-size: 1.5rem;
+            margin-right: 0.75rem;
+        }
+        
+        .tier-title {
+            margin: 0;
+        }
+        
+        .tier-tagline {
+            margin: 0;
+            font-size: 0.875rem;
+            font-style: italic;
+            color: var(--accent);
+        }
+        
+        /* Contact Links */
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            background: var(--card);
+            color: var(--text);
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        .social-link:hover {
+            opacity: 0.8;
+        }
+        
+        .social-icon {
+            width: 16px;
+            height: 16px;
+        }
+        
+        /* Icons */
+        .icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+        }
+        
+        .hide {
+            display: none;
+        }
+        
+        /* Heart icon */
+        .heart-icon {
+            display: inline-block;
+            width: 20px;
+            height: 18px;
+            position: relative;
+            margin: 0 5px;
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        .heart-icon:before,
+        .heart-icon:after {
+            content: "";
+            background-color: var(--accent);
+            border-radius: 50% 50% 0 0;
+            position: absolute;
+            left: 10px;
+            top: 0;
+            width: 10px;
+            height: 16px;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+        
+        .heart-icon:after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            14% { transform: scale(1.1); }
+            28% { transform: scale(1); }
+            42% { transform: scale(1.1); }
+            70% { transform: scale(1); }
+        }
+        
+        /* Moon icon */
+        .moon-icon {
+            display: block;
+            width: 18px;
+            height: 18px;
+            background: transparent;
+            box-shadow: inset -3px -3px 0 0 var(--text);
+            border-radius: 50%;
+            position: relative;
+            margin: 2px;
+        }
+        
+        /* Sun icon */
+        .sun-icon {
+            display: block;
+            width: 18px;
+            height: 18px;
+            background: var(--text);
+            border-radius: 50%;
+            position: relative;
+            margin: 2px;
+        }
+        
+        .sun-icon:before {
+            content: "";
+            position: absolute;
+            top: -4px;
+            left: 50%;
+            width: 2px;
+            height: 4px;
+            margin-left: -1px;
+            background: var(--text);
+        }
+        
+        .sun-icon:after {
+            content: "";
+            position: absolute;
+            top: 18px;
+            left: 50%;
+            width: 2px;
+            height: 4px;
+            margin-left: -1px;
+            background: var(--text);
+        }
+        
+        /* Custom Icons */
+        .code-icon, .camera-icon, .book-icon, .globe-icon {
+            position: relative;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .code-icon:after {
+            content: "</>";
+            font-family: monospace;
+            font-weight: bold;
+            font-size: 14px;
+            color: currentColor;
+        }
+        
+        .camera-icon:before {
+            content: "📷";
+            font-size: 20px;
+        }
+        
+        .book-icon:before {
+            content: "📖";
+            font-size: 20px;
+        }
+        
+        .globe-icon:before {
+            content: "🌐";
+            font-size: 20px;
+        }
+        
+        .external-link-icon:after {
+            content: "↗";
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        /* Lists */
+        ul {
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.25rem;
+        }
+        
+        /* Spacing helpers */
+        .mt-8 {
+            margin-top: 2rem;
+        }
+        
+        .space-y-6 > * + * {
+            margin-top: 1.5rem;
+        }
+        
+        .space-y-4 > * + * {
+            margin-top: 1rem;
+        }
+        
+        .space-y-2 > * + * {
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <h1>OBINexus</h1>
+                <p>From the <span class="heart-icon"></span> to the World</p>
+            </div>
+            
+            <button class="theme-toggle" aria-label="Toggle theme" id="theme-toggle">
+                <span class="moon-icon" id="moon-icon"></span>
+                <span class="sun-icon hide" id="sun-icon"></span>
+            </button>
+        </div>
+        
+        <!-- Navigation Tabs -->
+        <div class="tabs">
+            <button class="tab-button active" data-tab="about">About</button>
+            <button class="tab-button" data-tab="services">Services</button>
+            <button class="tab-button" data-tab="initiatives">Initiatives</button>
+            <button class="tab-button" data-tab="partnerships">Partnerships</button>
+            <button class="tab-button" data-tab="contact">Contact</button>
+        </div>
+        
+        <!-- Content Area -->
+        <div class="content-area">
+            <!-- About Tab -->
+            <div class="tab-content active" id="about-content">
+                <div class="space-y-6">
+                    <div class="space-y-4">
+                        <h3>From the Heart, To the World</h3>
+                        <p>
+                            I am Nnamdi Michael Okpala, the founder of OBINexus Computing. As an individual with Autism, ADHD, and Asperger's with a learning disability, I bring unique perspectives to software engineering and digital solutions.
+                        </p>
+                        <p>
+                            OBINexus represents a heart that is slightly curved, symbolizing accessibility needs. OBI means "heart" in Igbo language, and nexus means "connection" - together representing our mission to connect and create accessible technology for all.
+                        </p>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4>Our Motto: "Build with Purpose, Run with Heart"</h4>
+                        <p>OBINexus is a unified ecosystem that starts with individuals and scales up to support entire organizations. From single-user licenses to enterprise-grade tiers, everything begins at obinexus.org—your launchpad into computing, fashion, and publishing, powered by culture, integrity, and innovation.</p>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4>Educational Background</h4>
+                        <ul class="space-y-2">
+                            <li>Attended Oxford University at the age of 14 (Forest Gate Community School FGCS Newham Gifted and Talented Group)</li>
+                            <li>Level 2 Diploma in IT User Skills</li>
+                            <li>Microsoft certifications in building interactive prototypes using JavaScript and designing technical solutions</li>
+                            <li>Multiple programming certifications: HTML, CSS, JavaScript, Python, Java, C++, jQuery</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Services Tab -->
+            <div class="tab-content" id="services-content">
+                <div class="service-cards">
+                    <!-- Computing Service -->
+                    <div class="service-card" data-id="computing">
+                        <div class="service-header">
+                            <div class="service-icon">
+                                <span class="code-icon"></span>
+                            </div>
+                            <div>
+                                <h3 class="service-title">OBINexus Computing</h3>
+                                <p class="service-tagline">Computing from the Heart</p>
+                            </div>
+                        </div>
+                        
+                        <p>Innovative tools, frameworks, and an ecosystem of computing excellence from the heart. Projects like RiftLang and Rainbow Scripting are designed for individuals and businesses seeking next-gen software solutions that combine clarity, structure, and performance.</p>
+                        
+                        <ul>
+                            <li>Focus: Developer tools, languages, frameworks</li>
+                            <li>Products: LibPolyCall, HyperNUM, GOSI Aura</li>
+                            <li>License: Single-user entry, scalable support</li>
+                            <li>Community: Discord, tutorials, support network</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Fashion Service -->
+                    <div class="service-card" data-id="fashion">
+                        <div class="service-header">
+                            <div class="service-icon">
+                                <span class="camera-icon"></span>
+                            </div>
+                            <div>
+                                <h3 class="service-title">OBINexus UCHE Nnamdi</h3>
+                                <p class="service-tagline">Attire from the Heart</p>
+                            </div>
+                        </div>
+                        
+                        <p>This branch showcases cultural, woven, and enriched clothing. From butterfly patterns on agbada to designs celebrating Igbo heritage, UCHE Nnamdi blends tradition with creativity.</p>
+                        
+                        <ul>
+                            <li>Focus: Cultural fashion, enriched symbolism</li>
+                            <li>Offerings: Custom attire, creative drops</li>
+                            <li>Presentation: Photography, short films, exhibitions</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Publishing Service -->
+                    <div class="service-card" data-id="publishing">
+                        <div class="service-header">
+                            <div class="service-icon">
+                                <span class="book-icon"></span>
+                            </div>
+                            <div>
+                                <h3 class="service-title">OBINexus Publishing</h3>
+                                <p class="service-tagline">Publishing from the Heart</p>
+                            </div>
+                        </div>
+                        
+                        <p>Focused on creating accessible, meaningful books. Both ebooks and physical books are crafted to inform and inspire. Topics range from technical manuals to creative literature.</p>
+                        
+                        <ul>
+                            <li>Focus: Knowledge sharing, accessible reading</li>
+                            <li>Output: Technical documentation, fiction, educational books</li>
+                            <li>Style: Dual voice system—Gen Z & Founder's Voice</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Initiatives Tab -->
+            <div class="tab-content" id="initiatives-content">
+                <div class="initiatives-grid">
+                    <!-- Digital Rights -->
+                    <div class="initiative-card" data-id="rights">
+                        <div class="initiative-icon">
+                            <div class="initiative-icon-bg">
+                                <span class="globe-icon"></span>
+                            </div>
+                        </div>
+                        
+                        <h3>Digital Rights as Human Rights</h3>
+                        <p>We advocate for digital rights as human rights to bridge the digital divide, recognizing computers as essential tools in the modern working environment.</p>
+                    </div>
+                    
+                    <!-- Accessibility -->
+                    <div class="initiative-card" data-id="accessibility">
+                        <div class="initiative-icon">
+                            <div class="initiative-icon-bg">
+                                <span class="heart-icon"></span>
+                            </div>
+                        </div>
+                        
+                        <h3>Accessible Innovation at Scale</h3>
+                        <p>As a software engineer with firsthand experience of neurodiversity, I aim to break down barriers through innovation and systematic change.</p>
+                    </div>
+                    
+                    <!-- Carbon Footprint -->
+                    <div class="initiative-card" data-id="eco">
+                        <div class="initiative-icon">
+                            <div class="initiative-icon-bg">
+                                <span class="camera-icon"></span>
+                            </div>
+                        </div>
+                        
+                        <h3>Minimizing Carbon Footprint</h3>
+                        <p>There is a lack of legal infrastructure to facilitate the fixing/repair of devices, which results in throwing away useful computers devices and appliances which issues can be most times resolved easily. Waste is a key factor in carbon footprint.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Partnerships Tab -->
+            <div class="tab-content" id="partnerships-content">
+                <div class="partnership-tiers">
+                    <!-- UCHE Tier -->
+                    <div class="tier-card" data-id="uche">
+                        <div class="tier-header">
+                            <span class="tier-badge">🥇</span>
+                            <div>
+                                <h3 class="tier-title">UCHE Tier</h3>
+                                <p class="tier-tagline">Knowledge from the Heart</p>
+                            </div>
+                        </div>
+                        
+                        <p>This is OBINexus's core partnership tier for collaborative builders.</p>
+                        
+                        <div>
+                            <p><strong>Focus:</strong> Deep, project-based collaboration</p>
+                            <p><strong>Best For:</strong> Developers, designers, and creators who want to co-create with OBINexus</p>
+                        </div>
+                        
+                        <div>
+                            <h4>Includes:</h4>
+                            <ul>
+                                <li>Access to GDPR & SAR request support</li>
+                                <li>Creative + technical project collaboration</li>
+                                <li>Joint branding opportunities</li>
+                                <li>First access to internal tools, APIs, and docs</li>
+                                <li>Featured placement on OBINexus platforms</li>
+                                <li>Access to test environments and early betas</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- HEART Tier -->
+                    <div class="tier-card" data-id="heart">
+                        <div class="tier-header">
+                            <span class="tier-badge">🥈</span>
+                            <div>
+                                <h3 class="tier-title">HEART Tier</h3>
+                                <p class="tier-tagline">Bringing Your Vision to Life</p>
+                            </div>
+                        </div>
+                        
+                        <p>This tier is focused on operational stability and business integration.</p>
+                        
+                        <div>
+                            <p><strong>Focus:</strong> Seamless implementation and enterprise-grade support</p>
+                            <p><strong>Best For:</strong> Businesses and institutions looking to run OBINexus solutions in production</p>
+                        </div>
+                        
+                        <div>
+                            <h4>Includes:</h4>
+                            <ul>
+                                <li>GDPR + SAR compliance support</li>
+                                <li>NDA handling and legal workflow setup</li>
+                                <li>Operational consulting and integration planning</li>
+                                <li>Dedicated communication with the OBINexus team</li>
+                                <li>Workflow automation and infrastructure setup</li>
+                                <li>Private onboarding, internal support documentation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="hub-info" style="text-align: center; margin-top: 2rem; padding: 1rem; border-radius: 0.5rem; background: var(--card);">
+                        <p style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem;">Main Hub: obinexus.org</p>
+                        <p>Start small. Grow big. Every path begins here.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Tab -->
+            <div class="tab-content" id="contact-content">
+                <div class="space-y-6">
+                    <div class="space-y-4">
+                        <h3>Get in Touch</h3>
+                        <p>For inquiries, please email: nnamdi@obinexuscomputing.org</p>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4>Connect with us</h4>
+                        <div class="social-links">
+                            <a href="https://github.com/okpalan" class="social-link" target="_blank" rel="noopener noreferrer">
+                                <span>GitHub</span>
+                                <span class="social-icon external-link-icon"></span>
+                            </a>
+                            <a href="https://youtube.com/okpalan" class="social-link" target="_blank" rel="noopener noreferrer">
+                                <span>YouTube</span>
+                                <span class="social-icon external-link-icon"></span>
+                            </a>
+                            <a href="https://x.com/okpalanx" class="social-link" target="_blank" rel="noopener noreferrer">
+                                <span>X/Twitter</span>
+                                <span class="social-icon external-link-icon"></span>
+                            </a>
+                            <a href="https://instagram.com/okpalanx" class="social-link" target="_blank" rel="noopener noreferrer">
+                                <span>Instagram</span>
+                                <span class="social-icon external-link-icon"></span>
+                            </a>
+                            <a href="https://okpalanx.blogspot.com/" class="social-link" target="_blank" rel="noopener noreferrer">
+                                <span>Blog</span>
+                                <span class="social-icon external-link-icon"></span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8" style="padding: 1.5rem; border-radius: 0.5rem; background: var(--card);">
+                        <h4>Our Commitment</h4>
+                        <p>"At OBINexus, every service we offer—whether code, cloth, or content—is delivered with heart, purpose, and respect for all cultures, contributors, and communities."</p>
+                    </div>
+
+                    <div class="mt-8 space-y-4">
+                        <h4>#NoGhostingPolicy</h4>
+                        <p>At OBINexus, we uphold the highest standards of professional ethics. We implement a strict #NoGhostingPolicy, ensuring reliable communication and closure in all business interactions.</p>
+                        <p>In today's hyper-competitive landscape, it has become increasingly common for companies to engage in practices like "ghosting" — disappearing after initiating contact, interviews, or business negotiations. We believe businesses should be rated not only by performance but also by their consistency, transparency, and ethical conduct.</p>
+                        <p>Our Anti-Ghosting Principles:</p>
+                        <ul>
+                            <li>Clear Communication: We always respond to inquiries within 48 hours</li>
+                            <li>Formal Closure: Every interaction receives proper closure, whether positive or negative</li>
+                            <li>Contractual Accountability: Legal consequences for non-communication are built into our agreements</li>
+                            <li>Transparent Processes: Our workflows are designed for visibility and clear expectations</li>
+                        </ul>
+                        <p>Business is more than growth metrics — it's a human process built on relationships and trust.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>&copy; <span id="current-year"></span> OBINexus Computing. All rights reserved.</p>
+            <p>"Build with Purpose, Run with Heart"</p>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Theme Toggle
+            const themeToggle = document.getElementById('theme-toggle');
+            const moonIcon = document.getElementById('moon-icon');
+            const sunIcon = document.getElementById('sun-icon');
+            let isDarkTheme = false;
+            
+            themeToggle.addEventListener('click', function() {
+                isDarkTheme = !isDarkTheme;
+                
+                if (isDarkTheme) {
+                    document.documentElement.style.setProperty('--background', 'var(--dark-background)');
+                    document.documentElement.style.setProperty('--text', 'var(--dark-text)');
+                    document.documentElement.style.setProperty('--secondary', 'var(--dark-secondary)');
+                    document.documentElement.style.setProperty('--card', 'var(--dark-card)');
+                    document.documentElement.style.setProperty('--accent', 'var(--dark-accent)');
+                    document.documentElement.style.setProperty('--border', 'var(--dark-border)');
+                    
+                    moonIcon.classList.add('hide');
+                    sunIcon.classList.remove('hide');
+                } else {
+                    document.documentElement.style.setProperty('--background', 'var(--light-background)');
+                    document.documentElement.style.setProperty('--text', 'var(--light-text)');
+                    document.documentElement.style.setProperty('--secondary', 'var(--light-secondary)');
+                    document.documentElement.style.setProperty('--card', 'var(--light-card)');
+                    document.documentElement.style.setProperty('--accent', 'var(--light-accent)');
+                    document.documentElement.style.setProperty('--border', 'var(--light-border)');
+                    
+                    moonIcon.classList.remove('hide');
+                    sunIcon.classList.add('hide');
+                }
+            });
+            
+            // Tab Switching
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Update active tab button
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show active tab content
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    document.getElementById(`${tabId}-content`).classList.add('active');
+                });
+            });
+            
+            // Service Card Animation
+            const serviceCards = document.querySelectorAll('.service-card');
+            
+            serviceCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    const cardId = this.getAttribute('data-id');
+                    setTimeout(() => {
+                        this.style.opacity = '1';
+                    }, 300);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+build_uche:
+  stage: build
+  script:
+    - echo "Building uche.obinexus.org"
+  rules:
+    - changes:
+        - uche.obinexus.org/**/*
+        - .gitlab-ci.yml
+
+test_uche:
+  stage: test
+  script:
+    - echo "Testing uche.obinexus.org"
+  rules:
+    - changes:
+        - uche.obinexus.org/**/*
+        - .gitlab-ci.yml
+
+deploy_uche:
+  stage: deploy
+  script:
+    - echo "Deploying uche.obinexus.org"
+    - lftp -c "open -u $FTP_USER,$FTP_PASS $FTP_HOST; mirror -R ./uche.obinexus.org/public $DEPLOY_PATH"
+  rules:
+    - changes:
+        - uche.obinexus.org/**/*
+        - .gitlab-ci.yml

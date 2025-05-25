@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="svg38"
+   viewBox="0 0 124.94014 119.34173"
+   version="1.1"
+   sodipodi:docname="triskellion.svg"
+   width="124.97601"
+   height="119.376"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   inkscape:export-filename="triskel.png"
+   inkscape:export-xdpi="125.59542"
+   inkscape:export-ydpi="125.59542"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview40"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     showgrid="false"
+     inkscape:zoom="4.145"
+     inkscape:cx="93.003619"
+     inkscape:cy="63.329312"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="2391"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg38" />
+  <defs
+     id="defs35">
+    <linearGradient
+       id="grad1"
+       cx="50%"
+       cy="50%"
+       fx="50%"
+       fy="50%"
+       gradientTransform="matrix(6.5254917,0,0,6.2382543,-2.8239688,-8.9275273)"
+       x1="0.40312356"
+       y1="1.3855277"
+       x2="19.579222"
+       y2="1.3855277"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="5%"
+         style="stop-color:rgb(230, 57, 70);stop-opacity:1"
+         id="stop24" />
+      <stop
+         offset="25%"
+         style="stop-color:rgb(241, 250, 238);stop-opacity:1"
+         id="stop26" />
+      <stop
+         offset="50%"
+         style="stop-color:rgb(168, 218, 220);stop-opacity:1"
+         id="stop28" />
+      <stop
+         offset="75%"
+         style="stop-color:rgb(69, 123, 157);stop-opacity:1"
+         id="stop30" />
+      <stop
+         offset="100%"
+         style="stop-color:rgb(29, 53, 87);stop-opacity:1"
+         id="stop32" />
+    </linearGradient>
+  </defs>
+  <animate
+     attributeName="stroke-dasharray"
+     values="0, 100; 100, 0"
+     dur="2s"
+     repeatCount="indefinite" />
+  <animate
+     attributeName="stroke-dashoffset"
+     values="100; 0"
+     dur="2s"
+     repeatCount="indefinite" />
+  <path
+     id="triskel"
+     d="m 61.910119,58.237432 a 20.907383,20.907383 0 0 0 2.60952,-41.733256 11.740586,11.740586 0 1 0 -3.98128,23.141193 6.3802566,6.3802566 0 0 0 2.20757,-6.609946 c -0.85049,-1.488513 -1.90132,-0.976179 -0.68907,-6.137809 a 6.3802566,5.1042053 0 0 1 9.69799,2.328795 7.656308,11.484462 0 0 1 1.55041,11.63759 25.521027,15.950641 15 0 1 -19.44065,8.498502 24.352256,24.352256 0 0 1 18.81538,-44.9233893 37.643515,35.091411 0.3 0 1 11.22925,56.7587603 22.776886,22.776886 0 0 0 24.946811,38.11565 12.380512,12.380512 0 0 0 -15.976171,-18.91746 6.3802566,6.3802566 0 0 0 1.30158,6.20161 4.4786121,5.8929109 55 0 1 4.0068,8.05827 15.950641,9.5703849 4 0 1 -15.56783,-11.27392 19.876906,19.876906 0 0 1 39.608641,3.3943 31.957699,28.761929 38 0 1 -61.250471,0 22.844464,22.844464 0 0 0 -45.45933,4.57465 12.800326,11.852153 1.5 0 0 25.591208,-0.50405 6.3802566,6.3802566 0 0 0 -5.652908,-4.0706 6.3802566,6.3802566 0 0 0 -1.977879,2.56487 6.3802566,6.3802566 0 0 1 -1.403656,3.81538 7.6959555,7.6959555 0 0 1 -0.52956,-15.38279 17.371491,17.371491 0 0 1 7.528702,33.917448 26.930164,26.930164 0 0 1 -19.185431,-50.327468 c 10.584847,-6.44406 19.504445,-6.06124 26.688613,-5.02126 z"
+     stroke="url(#grad1)"
+     stroke-width="5.1042"
+     fill="none"
+     stroke-linecap="round"
+     style="stroke:url(#grad1)" />
+</svg>

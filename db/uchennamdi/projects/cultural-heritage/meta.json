@@ -1,0 +1,13 @@
+{
+  "name": "Cultural Heritage Collection",
+  "division": "uchennamdi",
+  "status": "active",
+  "version": "1.0.0",
+  "description": "Fashion designs bridging Igbo heritage with modern tech-fusion aesthetics",
+  "repository": "https://github.com/obinenxus/cultural-heritage", 
+  "documentation": "/docs/uche-nnamdi/projects/cultural-heritage/",
+  "maintainers": ["nnamdi.okpala"],
+  "dependencies": [],
+  "tags": ["fashion", "cultural-heritage", "tech-fusion"],
+  "last_updated": "2025-05-25"
+}

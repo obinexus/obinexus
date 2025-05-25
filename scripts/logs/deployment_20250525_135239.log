@@ -1,0 +1,17 @@
+[INFO 2025-05-25 13:52:39] Starting OBINexus dual-stack deployment - Timestamp: 20250525_135239
+[INFO 2025-05-25 13:52:39] Phase 1: Source structure validation
+[ERROR 2025-05-25 13:52:39] Missing meta.json in: /mnt/c/Users/OBINexus/Projects/www/obinexus/db/computing/projects
+[ERROR 2025-05-25 13:52:39] Invalid JSON in: /mnt/c/Users/OBINexus/Projects/www/obinexus/db/computing/projects/libpolycall/meta.json
+[ERROR 2025-05-25 13:52:39] Invalid JSON in: /mnt/c/Users/OBINexus/Projects/www/obinexus/db/computing/projects/obix/meta.json
+[ERROR 2025-05-25 13:52:39] Invalid JSON in: /mnt/c/Users/OBINexus/Projects/www/obinexus/db/computing/projects/riftlang/meta.json
+[INFO 2025-05-25 13:52:39] Division computing: 0 projects validated
+[ERROR 2025-05-25 13:52:39] Missing meta.json in: /mnt/c/Users/OBINexus/Projects/www/obinexus/db/publishing/projects
+[ERROR 2025-05-25 13:52:39] Invalid JSON in: /mnt/c/Users/OBINexus/Projects/www/obinexus/db/publishing/projects/bopumanimals/meta.json
+[ERROR 2025-05-25 13:52:39] Invalid JSON in: /mnt/c/Users/OBINexus/Projects/www/obinexus/db/publishing/projects/how-to-rift/meta.json
+[INFO 2025-05-25 13:52:39] Division publishing: 0 projects validated
+[ERROR 2025-05-25 13:52:39] Missing meta.json in: /mnt/c/Users/OBINexus/Projects/www/obinexus/db/uchennamdi/projects
+[ERROR 2025-05-25 13:52:39] Invalid JSON in: /mnt/c/Users/OBINexus/Projects/www/obinexus/db/uchennamdi/projects/cultural-heritage/meta.json
+[ERROR 2025-05-25 13:52:39] Invalid JSON in: /mnt/c/Users/OBINexus/Projects/www/obinexus/db/uchennamdi/projects/tech-fusion/meta.json
+[INFO 2025-05-25 13:52:39] Division uchennamdi: 0 projects validated
+[ERROR 2025-05-25 13:52:39] Structure validation failed with 10 errors
+[ERROR 2025-05-25 13:52:39] Deployment aborted due to validation failures

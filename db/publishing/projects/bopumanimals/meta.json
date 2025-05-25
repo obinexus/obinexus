@@ -1,0 +1,13 @@
+{
+  "name": "Bopumanimals",
+  "division": "publishing",
+  "status": "planning",
+  "version": "0.1.0",
+  "description": "Creative narrative project bridging technical concepts with accessible storytelling", 
+  "repository": "https://github.com/obinenxus/bopumanimals",
+  "documentation": "/docs/publishing/projects/bopumanimals/",
+  "maintainers": ["nnamdi.okpala"],
+  "dependencies": [],
+  "tags": ["documentation", "storytelling", "technical-writing"],
+  "last_updated": "2025-05-25"
+}

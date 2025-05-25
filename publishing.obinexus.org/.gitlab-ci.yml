@@ -1,0 +1,27 @@
+build_publishing:
+  stage: build
+  script:
+	- echo "Building publishing.obinexus.org"
+  rules:
+	- changes:
+		- publishing.obinexus.org/**/*
+		- .gitlab-ci.yml
+
+test_publishing:
+  stage: test
+  script:
+	- echo "Testing publishing.obinexus.org"
+  rules:
+	- changes:
+		- publishing.obinexus.org/**/*
+		- .gitlab-ci.yml
+
+deploy_publishing:
+  stage: deploy
+  script:
+	- echo "Deploying publishing.obinexus.org"
+	- lftp -c "open -u $FTP_USER,$FTP_PASS $FTP_HOST; mirror -R ./publishing.obinexus.org/public $DEPLOY_PATH"
+  rules:
+	- changes:
+		- publishing.obinexus.org/**/*
+		- .gitlab-ci.yml

@@ -1,0 +1,13 @@
+{
+  "name": "LibPolyCall",
+  "division": "computing",
+  "status": "active", 
+  "version": "0.1.5",
+  "description": "Polymorphic call library enabling cross-language function invocation",
+  "repository": "https://github.com/obinenxus/libpolycall",
+  "documentation": "/docs/computing/projects/libpolycall/",
+  "maintainers": ["nnamdi.okpala"],
+  "dependencies": [],
+  "tags": ["language", "framework", "interoperability"],
+  "last_updated": "2025-05-25"
+}

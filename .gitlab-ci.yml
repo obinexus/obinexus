@@ -1,0 +1,9 @@
+stages:
+  - build
+  - test
+  - deploy
+
+include:
+  - local: 'computing.obinexus.org/.gitlab-ci.yml'
+  - local: 'publishing.obinexus.org/.gitlab-ci.yml'
+  - local: 'uche.obinexus.org/.gitlab-ci.yml'

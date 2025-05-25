@@ -1,0 +1,10 @@
+[INFO 2025-05-25 13:48:05] Starting OBINexus dual-stack deployment - Timestamp: 20250525_134805
+[INFO 2025-05-25 13:48:05] Phase 1: Source structure validation
+[ERROR 2025-05-25 13:48:05] Missing meta.json in: /mnt/c/Users/OBINexus/Projects/www/obinexus/db/computing/projects
+[INFO 2025-05-25 13:48:05] Division computing: 0 projects validated
+[ERROR 2025-05-25 13:48:05] Missing meta.json in: /mnt/c/Users/OBINexus/Projects/www/obinexus/db/publishing/projects
+[INFO 2025-05-25 13:48:05] Division publishing: 0 projects validated
+[ERROR 2025-05-25 13:48:05] Missing meta.json in: /mnt/c/Users/OBINexus/Projects/www/obinexus/db/uchennamdi/projects
+[INFO 2025-05-25 13:48:05] Division uchennamdi: 0 projects validated
+[ERROR 2025-05-25 13:48:05] Structure validation failed with 3 errors
+[ERROR 2025-05-25 13:48:05] Deployment aborted due to validation failures

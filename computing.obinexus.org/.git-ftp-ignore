@@ -1,0 +1,35 @@
+# Ignore dependencies
+node_modules/
+vendor/
+
+# Ignore build tools + generated content
+dist/
+build/
+.cache/
+.next/
+.vite/
+.vscode/
+
+# Ignore meta files
+.git/
+.gitignore
+.gitkeep
+.gitlab-ci.yml
+.git-ftp-ignore
+.git-ftp-include
+
+# Ignore docs & markdown
+*.md
+
+# Ignore environment + config
+.env
+.env.*
+*.log
+*.lock
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Ignore frontend stuff we don’t need to deploy
+**/node_modules/*
+**/node_modules

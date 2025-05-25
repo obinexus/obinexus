@@ -1,0 +1,13 @@
+{
+  "name": "RiftLang",
+  "division": "computing",
+  "status": "active",
+  "version": "0.1.0",
+  "description": "Core language implementation for modular system development with interoperability focus",
+  "repository": "https://github.com/obinenxus/riftlang",
+  "documentation": "/docs/computing/projects/riftlang/",
+  "maintainers": ["nnamdi.okpala"],
+  "dependencies": [],
+  "tags": ["language", "framework", "interoperability"],
+  "last_updated": "2025-05-25"
+}

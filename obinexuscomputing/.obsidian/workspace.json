@@ -1,0 +1,215 @@
+{
+  "main": {
+    "id": "7d571c54805cb40e",
+    "type": "split",
+    "children": [
+      {
+        "id": "a26dacf2f1b64262",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "dc6e96efa5032eb7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "data/lost+found/SIDE HUSTLING FOR U.D.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "SIDE HUSTLING FOR U.D"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ff8d040d9d0c1f45",
+    "type": "split",
+    "children": [
+      {
+        "id": "d5842c62309f8884",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c6322a5ef0f3a799",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "e08f72ca4da34caa",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "path:\"man/quatum-collatz/\" ",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "d90bda446b69d055",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "44aa246e2e03c29c",
+    "type": "split",
+    "children": [
+      {
+        "id": "8e803bd227ebaae6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "65c7aee090a8bd9a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "man/maths/Why Mathematics - A Formal take on Mathematics.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Why Mathematics - A Formal take on Mathematics"
+            }
+          },
+          {
+            "id": "c8317ba5b49b979a",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "man/maths/Why Mathematics - A Formal take on Mathematics.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Why Mathematics - A Formal take on Mathematics"
+            }
+          },
+          {
+            "id": "ea940c0516ceb32d",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "55d8a5d8af4d22be",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "man/maths/Why Mathematics - A Formal take on Mathematics.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Why Mathematics - A Formal take on Mathematics"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "random-note:Open random note": false,
+      "zk-prefixer:Create new unique note": false
+    }
+  },
+  "active": "dc6e96efa5032eb7",
+  "lastOpenFiles": [
+    "www/okpalan/dist/sitemap.xml",
+    "www/okpalan/node_modules/lodash-es/flake.nix",
+    "www/okpalan/node_modules/lodash-es/release.md",
+    "www/okpalan/node_modules/lodash-es/README.md",
+    "www/okpalan/node_modules/lodash-es/flake.lock",
+    "www/okpalan/node_modules/lodash-es/package.json",
+    "www/okpalan/node_modules/lodash-es/zipWith.js",
+    "www/okpalan/node_modules/lodash-es/zipObjectDeep.js",
+    "www/okpalan/node_modules/lodash-es/zipObject.js",
+    "www/okpalan/node_modules/lodash-es/zip.js",
+    "www/okpalan/node_modules/lodash-es/xorWith.js",
+    "www/okpalan/node_modules/lodash-es/xorBy.js",
+    "www/okpalan/node_modules/lodash-es/xor.js",
+    "man/2024-12-04.md",
+    "data/lost+found/SIDE HUSTLING FOR U.D.md",
+    "man/OBINexus Computing Manual Files.md",
+    "man/TODO.md",
+    "man/maths/Why Mathematics - A Formal take on Mathematics.md",
+    "man/quatum-collatz/Quantum Collatz.md",
+    "www/okpalan/node_modules/esquery/README.md",
+    "www/okpalan/node_modules/minimatch/README.md",
+    "www/okpalan/node_modules/uri-js/README.md",
+    "www/okpalan/node_modules/js-yaml/README.md",
+    "www/okpalan/node_modules/graphemer/README.md",
+    "www/okpalan/node_modules/graphemer/CHANGELOG.md",
+    "www/okpalan/node_modules/iconv-lite/README.md",
+    "www/okpalan/node_modules/js-yaml/CHANGELOG.md",
+    "www/okpalan/node_modules/foreground-child/README.md",
+    "www/okpalan/node_modules/superjson/README.md",
+    "www/okpalan/node_modules/ws/README.md",
+    "www/okpalan/node_modules/source-map-js/README.md",
+    "www/okpalan/node_modules/minipass/README.md",
+    "www/okpalan/node_modules/json5/README.md",
+    "www/okpalan/node_modules/nanoid/README.md",
+    "www/okpalan/node_modules/vscode-uri/SECURITY.md",
+    "www/okpalan/node_modules/commander/Readme.md",
+    "www/okpalan/node_modules/playwright-core/lib/vite/traceViewer/playwright-logo.svg",
+    "www/okpalan/node_modules/playwright-core/lib/vite/recorder/playwright-logo.svg",
+    "www/okpalan/node_modules/playwright-core/lib/server/chromium/appIcon.png",
+    "www/okpalan/src/assets/logo.svg",
+    "www/okpalan/okpalan/src/assets/logo.svg",
+    "old-www/pages/dist/assets/home-icon.svg",
+    "old-www/assets/home-icon.svg",
+    "www/pages/dist/assets/home-icon.svg",
+    "www/assets/home-icon.svg"
+  ]
+}
