@@ -1,0 +1,21 @@
+[INFO 2025-05-25 15:23:38] Starting maintenance validation - Timestamp: 20250525_152338
+[SUCCESS 2025-05-25 15:23:38] Confirmed: index.html exists
+[SUCCESS 2025-05-25 15:23:38] Confirmed: _config.yml exists
+[SUCCESS 2025-05-25 15:23:38] Confirmed: docs/computing/ directory structure
+[SUCCESS 2025-05-25 15:23:38] Confirmed: docs/publishing/ directory structure
+[SUCCESS 2025-05-25 15:23:38] Confirmed: docs/uche-nnamdi/ directory structure
+[SUCCESS 2025-05-25 15:23:38] Confirmed: assets/ directory structure
+[SUCCESS 2025-05-25 15:23:38] Jekyll config: title configured
+[SUCCESS 2025-05-25 15:23:38] Jekyll config: baseurl configured
+[SUCCESS 2025-05-25 15:23:38] Jekyll config: url configured
+[INFO 2025-05-25 15:23:39] Uncommitted changes detected:
+[INFO 2025-05-25 15:23:40]   D github_pages_deploy.sh
+[INFO 2025-05-25 15:23:40]   ?? deployment_maintenance_20250525_152338.log
+[INFO 2025-05-25 15:23:40]   ?? github_pages_maintanance.sh
+[WARNING 2025-05-25 15:23:40] Currently on dev - switch to main for deployment
+[INFO 2025-05-25 15:23:40] Expected site URL: https://obinenxus.github.io/obinexus
+[INFO 2025-05-25 15:23:40] Division URLs:
+[INFO 2025-05-25 15:23:40]   Computing: https://obinenxus.github.io/obinexus/docs/computing/
+[INFO 2025-05-25 15:23:40]   Publishing: https://obinenxus.github.io/obinexus/docs/publishing/
+[INFO 2025-05-25 15:23:40]   UCHE Nnamdi: https://obinenxus.github.io/obinexus/docs/uche-nnamdi/
+[SUCCESS 2025-05-25 15:23:40] Maintenance validation completed successfully
