@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OBINexus Documentation Portal</title>
-    <meta name="description" content="OBINexus modular ecosystem documentation - Computing, Publishing, and UCHE Nnamdi divisions">
+    <title>OBINexus - Connection Through Technology</title>
+    <meta name="description" content="OBINexus ecosystem: Computing tools, cultural fashion, and digital sovereignty through modular development platforms.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -32,6 +32,7 @@
             background: var(--dark-bg);
             color: var(--text-primary);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         .container {
@@ -44,8 +45,9 @@
         header {
             background: rgba(10, 15, 28, 0.95);
             backdrop-filter: blur(20px);
-            position: sticky;
+            position: fixed;
             top: 0;
+            width: 100%;
             z-index: 1000;
             border-bottom: 1px solid var(--border-color);
         }
@@ -85,7 +87,7 @@
 
         /* Hero Section */
         .hero {
-            padding: 80px 0 60px;
+            padding: 120px 0 80px;
             text-align: center;
             background: radial-gradient(ellipse at center, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
         }
@@ -131,9 +133,10 @@
             50% { opacity: 0.5; }
         }
 
-        /* Division Grid */
+        /* Business Divisions */
         .divisions {
-            padding: 60px 0;
+            padding: 80px 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(118, 75, 162, 0.05) 100%);
         }
 
         .section-title {
@@ -147,7 +150,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
 
         .division-card {
@@ -157,7 +160,6 @@
             padding: 2rem;
             backdrop-filter: blur(20px);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
         }
 
         .division-card:hover {
@@ -183,8 +185,8 @@
         }
 
         .computing-icon { background: var(--primary-gradient); }
-        .publishing-icon { background: var(--accent-gradient); }
         .fashion-icon { background: var(--secondary-gradient); }
+        .publishing-icon { background: var(--accent-gradient); }
 
         .division-title {
             font-size: 1.25rem;
@@ -196,26 +198,10 @@
             margin-bottom: 1.5rem;
         }
 
-        .division-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: #4facfe;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .division-link:hover {
-            color: #00f2fe;
-        }
-
-        /* Project Tags */
-        .project-preview {
+        .project-list {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            margin-top: 1rem;
         }
 
         .project-tag {
@@ -226,19 +212,18 @@
             border: 1px solid var(--border-color);
         }
 
-        /* Quick Access */
-        .quick-access {
-            padding: 60px 0;
-            background: rgba(102, 126, 234, 0.05);
+        /* Technical Architecture */
+        .architecture {
+            padding: 80px 0;
         }
 
-        .access-grid {
+        .arch-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
         }
 
-        .access-card {
+        .arch-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 12px;
@@ -246,21 +231,71 @@
             text-align: center;
         }
 
-        .access-card h3 {
+        .arch-card h3 {
             font-size: 1.1rem;
             margin-bottom: 0.5rem;
             color: var(--text-primary);
         }
 
-        .access-card p {
+        .arch-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Repository Links */
+        .repositories {
+            padding: 80px 0;
+            background: rgba(102, 126, 234, 0.05);
+        }
+
+        .repo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .repo-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: transform 0.2s ease;
+        }
+
+        .repo-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .repo-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .repo-name {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .repo-status {
+            padding: 0.25rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--success-color);
+        }
+
+        .repo-description {
             color: var(--text-secondary);
             font-size: 0.9rem;
             margin-bottom: 1rem;
         }
 
-        .access-card a {
+        .repo-link {
             color: #4facfe;
             text-decoration: none;
+            font-size: 0.875rem;
             font-weight: 500;
         }
 
@@ -324,7 +359,8 @@
             <ul class="nav-links">
                 <li><a href="#overview">Overview</a></li>
                 <li><a href="#divisions">Divisions</a></li>
-                <li><a href="#access">Quick Access</a></li>
+                <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#repositories">Repositories</a></li>
                 <li><a href="https://obinexus.org">Main Site</a></li>
             </ul>
         </nav>
@@ -335,98 +371,150 @@
             <div class="container">
                 <div class="status-badge">
                     <span class="status-dot"></span>
-                    <span>Documentation Portal Active</span>
+                    <span>Preview Documentation Portal</span>
                 </div>
                 <h1>OBINexus</h1>
-                <p>Connection through technology. Explore our modular ecosystem documentation across computing, publishing, and cultural fashion divisions.</p>
+                <p>Connection through technology. A modular ecosystem bridging computing, culture, and creativity with emphasis on digital sovereignty and long-term stability.</p>
             </div>
         </section>
 
         <section class="divisions" id="divisions">
             <div class="container">
-                <h2 class="section-title">Documentation Divisions</h2>
+                <h2 class="section-title">Business Divisions</h2>
                 <div class="division-grid">
-                    <div class="division-card" onclick="location.href='docs/computing/'">
+                    <div class="division-card">
                         <div class="division-header">
-                            <div class="division-icon computing-icon">⚡</div>
-                            <h3 class="division-title">Computing</h3>
+                            <div class="division-icon computing-icon">?</div>
+                            <h3 class="division-title">OBINexus Computing</h3>
                         </div>
-                        <p class="division-description">
-                            Modular development tools, programming languages, and system architectures focused on interoperability and long-term stability.
-                        </p>
-                        <div class="project-preview">
+                        <p class="division-description">Modular development tools focused on interoperability, long-term stability, and developer-friendly architectures.</p>
+                        <div class="project-list">
                             <span class="project-tag">RiftLang</span>
                             <span class="project-tag">OBIX</span>
                             <span class="project-tag">LibPolyCall</span>
                             <span class="project-tag">NLink</span>
+                            <span class="project-tag">GosiLang</span>
+                            <span class="project-tag">GOSI Aura</span>
                         </div>
-                        <a href="docs/computing/" class="division-link">
-                            <span>Explore Computing →</span>
-                        </a>
                     </div>
 
-                    <div class="division-card" onclick="location.href='docs/publishing/'">
+                    <div class="division-card">
                         <div class="division-header">
-                            <div class="division-icon publishing-icon">📚</div>
-                            <h3 class="division-title">Publishing</h3>
+                            <div class="division-icon fashion-icon">??</div>
+                            <h3 class="division-title">OBINexus UCHE Nnamdi</h3>
                         </div>
-                        <p class="division-description">
-                            Deep logic storytelling, technical documentation, and narrative frameworks that bridge complex systems with accessible communication.
-                        </p>
-                        <div class="project-preview">
-                            <span class="project-tag">How to RIFT</span>
-                            <span class="project-tag">Bopumanimals</span>
-                            <span class="project-tag">Technical Guides</span>
-                        </div>
-                        <a href="docs/publishing/" class="division-link">
-                            <span>Explore Publishing →</span>
-                        </a>
-                    </div>
-
-                    <div class="division-card" onclick="location.href='docs/uche-nnamdi/'">
-                        <div class="division-header">
-                            <div class="division-icon fashion-icon">👗</div>
-                            <h3 class="division-title">UCHE Nnamdi</h3>
-                        </div>
-                        <p class="division-description">
-                            Fashion from the Heart - Cultural fashion design bridging Igbo heritage with modern tech-fusion clothing and aesthetic innovation.
-                        </p>
-                        <div class="project-preview">
+                        <p class="division-description">Fashion from the Heart - Cultural fashion bridging Igbo heritage with modern tech-fusion clothing designs.</p>
+                        <div class="project-list">
                             <span class="project-tag">Cultural Heritage</span>
                             <span class="project-tag">Tech Fusion</span>
                             <span class="project-tag">Igbo Aesthetics</span>
                         </div>
-                        <a href="docs/uche-nnamdi/" class="division-link">
-                            <span>Explore UCHE Nnamdi →</span>
-                        </a>
+                    </div>
+
+                    <div class="division-card">
+                        <div class="division-header">
+                            <div class="division-icon publishing-icon">??</div>
+                            <h3 class="division-title">OBINexus Publishing</h3>
+                        </div>
+                        <p class="division-description">Deep logic storytelling and technical documentation, bridging complex systems with accessible narratives.</p>
+                        <div class="project-list">
+                            <span class="project-tag">How to RIFT</span>
+                            <span class="project-tag">Bopumanimals</span>
+                            <span class="project-tag">Technical Docs</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="quick-access" id="access">
+        <section class="architecture" id="architecture">
             <div class="container">
-                <h2 class="section-title">Quick Access</h2>
-                <div class="access-grid">
-                    <div class="access-card">
-                        <h3>Project Index</h3>
-                        <p>Browse all active projects across divisions</p>
-                        <a href="#" id="project-index-link">View All Projects</a>
+                <h2 class="section-title">Technical Architecture</h2>
+                <div class="arch-grid">
+                    <div class="arch-card">
+                        <h3>Non-Monolithic Structure</h3>
+                        <p>Modular business divisions with independent deployment and scaling capabilities</p>
                     </div>
-                    <div class="access-card">
-                        <h3>Technical Architecture</h3>
-                        <p>System design and integration documentation</p>
-                        <a href="docs/computing/#architecture">View Architecture</a>
+                    <div class="arch-card">
+                        <h3>GitHub Pages Integration</h3>
+                        <p>Documentation portal hosted from obinenxus/obinenxu repository</p>
                     </div>
-                    <div class="access-card">
-                        <h3>Repository Links</h3>
-                        <p>Direct access to GitHub repositories</p>
-                        <a href="#" id="repo-links">Browse Repositories</a>
+                    <div class="arch-card">
+                        <h3>IONOS FTP Deployment</h3>
+                        <p>Main domain maintenance with redirect architecture to documentation portal</p>
                     </div>
-                    <div class="access-card">
-                        <h3>Getting Started</h3>
-                        <p>New user guides and setup instructions</p>
-                        <a href="docs/computing/#getting-started">Start Here</a>
+                    <div class="arch-card">
+                        <h3>GDPR Compliance</h3>
+                        <p>Privacy-first approach with transparent data handling and digital sovereignty</p>
+                    </div>
+                    <div class="arch-card">
+                        <h3>One-Time Licensing</h3>
+                        <p>Payhip integration for dev tools with no subscription dependencies</p>
+                    </div>
+                    <div class="arch-card">
+                        <h3>Developer Experience</h3>
+                        <p>Comprehensive documentation, Discord community, and open-access principles</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="repositories" id="repositories">
+            <div class="container">
+                <h2 class="section-title">Active Repositories</h2>
+                <div class="repo-grid">
+                    <div class="repo-card">
+                        <div class="repo-header">
+                            <span class="repo-name">RiftLang</span>
+                            <span class="repo-status">Active</span>
+                        </div>
+                        <p class="repo-description">Core language implementation for modular system development with interoperability focus.</p>
+                        <a href="#" class="repo-link">View Repository </a>
+                    </div>
+
+                    <div class="repo-card">
+                        <div class="repo-header">
+                            <span class="repo-name">OBIX</span>
+                            <span class="repo-status">Active</span>
+                        </div>
+                        <p class="repo-description">Object-based interface exchange system for seamless component communication.</p>
+                        <a href="#" class="repo-link">View Repository </a>
+                    </div>
+
+                    <div class="repo-card">
+                        <div class="repo-header">
+                            <span class="repo-name">LibPolyCall</span>
+                            <span class="repo-status">Active</span>
+                        </div>
+                        <p class="repo-description">Polymorphic call library enabling cross-language function invocation.</p>
+                        <a href="#" class="repo-link">View Repository </a>
+                    </div>
+
+                    <div class="repo-card">
+                        <div class="repo-header">
+                            <span class="repo-name">NLink</span>
+                            <span class="repo-status">Development</span>
+                        </div>
+                        <p class="repo-description">Network linking protocol for distributed system connectivity.</p>
+                        <a href="#" class="repo-link">View Repository </a>
+                    </div>
+
+                    <div class="repo-card">
+                        <div class="repo-header">
+                            <span class="repo-name">GosiLang</span>
+                            <span class="repo-status">Development</span>
+                        </div>
+                        <p class="repo-description">Domain-specific language for GOSI framework implementation.</p>
+                        <a href="#" class="repo-link">View Repository </a>
+                    </div>
+
+                    <div class="repo-card">
+                        <div class="repo-header">
+                            <span class="repo-name">GOSI Aura</span>
+                            <span class="repo-status">Planning</span>
+                        </div>
+                        <p class="repo-description">Atmospheric computing framework for ambient system interactions.</p>
+                        <a href="#" class="repo-link">View Repository </a>
                     </div>
                 </div>
             </div>
@@ -457,42 +545,14 @@
                 <div class="footer-section">
                     <h4>Resources</h4>
                     <p><a href="https://obinexus.org">Main Website</a></p>
-                    <p><a href="docs/">Technical Documentation</a></p>
-                    <p><a href="#repo-links">Developer Packages</a></p>
+                    <p><a href="#">Technical Documentation</a></p>
+                    <p><a href="#">Developer Packages</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 OBINexus. Connection through technology. Documentation portal hosted via GitHub Pages.</p>
+                <p>&copy; 2025 OBINexus. Connection through technology. Preview documentation portal hosted via GitHub Pages.</p>
             </div>
         </div>
     </footer>
-
-    <script>
-        // Dynamic navigation enhancement
-        document.addEventListener('DOMContentLoaded', function() {
-            // Auto-generate project index link
-            const projectIndexLink = document.getElementById('project-index-link');
-            if (projectIndexLink) {
-                projectIndexLink.href = generateProjectIndex();
-            }
-            
-            // Auto-generate repository links
-            const repoLinks = document.getElementById('repo-links');
-            if (repoLinks) {
-                repoLinks.href = generateRepoIndex();
-            }
-        });
-        
-        function generateProjectIndex() {
-            // This would dynamically scan docs/ folders
-            // For now, point to computing as primary
-            return 'docs/computing/#projects';
-        }
-        
-        function generateRepoIndex() {
-            // Point to a dedicated repositories page or external GitHub
-            return 'https://github.com/obinenxus';
-        }
-    </script>
 </body>
 </html>
