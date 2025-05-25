@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBINexus Computing Division</title>
+    <meta name="description" content="OBINexus Computing Division - Modular development tools and system architectures">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <style>
+        /* Division-specific overrides */
+        .division-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 4rem 0 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .breadcrumb {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .breadcrumb nav {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .breadcrumb a {
+            color: #4facfe;
+            text-decoration: none;
+        }
+
+        .breadcrumb span {
+            color: var(--text-secondary);
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .project-status {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .status-active { 
+            background: rgba(16, 185, 129, 0.2); 
+            color: #10b981; 
+        }
+
+        .status-development { 
+            background: rgba(245, 158, 11, 0.2); 
+            color: #f59e0b; 
+        }
+
+        .status-planning { 
+            background: rgba(107, 114, 128, 0.2); 
+            color: #9ca3af; 
+        }
+
+        .toc {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .toc h3 {
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .toc ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .toc a:hover {
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+<body>
+    <div class="breadcrumb">
+        <div class="container">
+            <nav>
+                <a href="../../">OBINexus</a>
+                <span>></span>
+                <a href="../">Documentation</a>
+                <span>></span>
+                <span>Computing</span>
+            </nav>
+        </div>
+    </div>
+
+    <header class="division-header">
+        <div class="container">
+            <h1>Computing Division</h1>
+            <p>Modular development tools focused on interoperability, long-term stability, and developer-friendly architectures</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="toc">
+            <h3>Table of Contents</h3>
+            <ul id="dynamic-toc">
+                <li><a href="#projects">Active Projects</a></li>
+                <li><a href="#architecture">Technical Architecture</a></li>
+                <li><a href="#getting-started">Getting Started</a></li>
+                <li><a href="#repositories">Repository Links</a></li>
+            </ul>
+        </div>
+
+        <section id="projects">
+            <h2>Active Projects</h2>
+            <div class="project-grid" id="project-container">
+                <!-- Projects will be dynamically loaded here -->
+                <div class="project-card">
+                    <div class="project-status status-active">Active</div>
+                    <h3>RiftLang</h3>
+                    <p>Core language implementation for modular system development with interoperability focus.</p>
+                    <a href="projects/riftlang/" class="division-link">View Project </a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-status status-active">Active</div>
+                    <h3>OBIX</h3>
+                    <p>Object-based interface exchange system for seamless component communication.</p>
+                    <a href="projects/obix/" class="division-link">View Project </a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-status status-active">Active</div>
+                    <h3>LibPolyCall</h3>
+                    <p>Polymorphic call library enabling cross-language function invocation.</p>
+                    <a href="projects/libpolycall/" class="division-link">View Project </a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-status status-development">Development</div>
+                    <h3>NLink</h3>
+                    <p>Network linking protocol for distributed system connectivity.</p>
+                    <a href="projects/nlink/" class="division-link">View Project </a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-status status-development">Development</div>
+                    <h3>GosiLang</h3>
+                    <p>Domain-specific language for GOSI framework implementation.</p>
+                    <a href="projects/gosilang/" class="division-link">View Project </a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-status status-planning">Planning</div>
+                    <h3>GOSI Aura</h3>
+                    <p>Atmospheric computing framework for ambient system interactions.</p>
+                    <a href="projects/gosi-aura/" class="division-link">View Project </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="architecture">
+            <h2>Technical Architecture</h2>
+            <div class="arch-grid">
+                <div class="arch-card">
+                    <h3>Non-Monolithic Structure</h3>
+                    <p>Modular business divisions with independent deployment and scaling capabilities</p>
+                </div>
+                <div class="arch-card">
+                    <h3>Interoperability Framework</h3>
+                    <p>Cross-language communication through LibPolyCall and OBIX protocols</p>
+                </div>
+                <div class="arch-card">
+                    <h3>Long-term Stability</h3>
+                    <p>Version-controlled APIs with backward compatibility guarantees</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="getting-started">
+            <h2>Getting Started</h2>
+            <p>Begin your journey with OBINexus Computing tools through our systematic development approach.</p>
+            <!-- Additional getting started content -->
+        </section>
+
+        <section id="repositories">
+            <h2>Repository Links</h2>
+            <p>Direct access to GitHub repositories and development resources.</p>
+            <!-- Repository links will be generated here -->
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 OBINexus Computing Division. Part of the OBINexus ecosystem.</p>
+                <p><a Back to Main Portal</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Auto-discovery and dynamic content loading
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProjectsFromFileSystem();
+            generateDynamicTOC();
+        });
+
+        async function loadProjectsFromFileSystem() {
+            // This function would scan the projects/ directory
+            // and generate project cards based on meta.json files
+            try {
+                const projectsContainer = document.getElementById('project-container');
+                // Implementation would depend on your specific project metadata structure
+                console.log('Dynamic project loading ready');
+            } catch (error) {
+                console.log('Fallback to static project list');
+            }
+        }
+
+        function generateDynamicTOC() {
+            const headers = document.querySelectorAll('h2[id]');
+            const toc = document.getElementById('dynamic-toc');
+            
+            // Clear existing TOC
+            toc.innerHTML = '';
+            
+            headers.forEach(header => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = `#${header.id}`;
+                a.textContent = header.textContent;
+                li.appendChild(a);
+                toc.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>href="../../">
