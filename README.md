@@ -4,7 +4,8 @@
 *Published via: Publicist.org*  
 *Date: May 2025*
 
-(github.obinexus)[https://obinexus.github.io/obinexus/]
+(github.obinexus)[https://obinexus.github.io/obinexus/] - current
+(obinexus.org)[https://www.obinexus.org]
 
 ---
 
