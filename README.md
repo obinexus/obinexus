@@ -6,7 +6,7 @@
 
 ![Nnamdi Michael Okpala - Founder](./images/nnamdi_okpala.png)
 
-**Nnamdi Michael Okpala** | Founder & Chief Systems Architect  
+**Nnamdi Michael Okpala** | Founder & Chief Systems and Language  Architect  
 *Oxford University Mathematics • Neurodivergent Systems Designer • Computing from the Heart*
 
 [![GitHub followers](https://img.shields.io/github/followers/obinexus?style=social)](https://github.com/obinexus)
@@ -20,7 +20,7 @@
 
 ## 👋 Introduction: From Oxford to Systems Architecture
 
-**Hey Claude, this is me.** I'm Nnamdi Michael Okpala, and I build systems that serve people, not the other way around.
+ I'm Nnamdi Michael Okpala, and I build systems that serve people, not the other way around.
 
 I went to Oxford University at 14 under the Gifted & Talented programme, studying Applied Mathematics with focus on real-world theory and implementation. As a neurodivergent founder (autism, ADHD, Asperger's, learning disability), I've experienced firsthand how traditional systems fail people who think differently. That's why OBINexus exists.
 
