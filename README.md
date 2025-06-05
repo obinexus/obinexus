@@ -232,11 +232,18 @@ Recursive consciousness modeling exploring information filtering vs. information
 
 <div align="center">
 
+
+
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=obinexus&show_icons=true&theme=radical&count_private=true)
+
+![Visitors](https://visitor-badge.laobi.icu/badge?page_id=obinexus)
 
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=obinexus&layout=compact&theme=radical)
 
 ![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=obinexus&theme=radical)
+
+[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=obinexus)](https://github.com/anuraghazra/github-readme-stats)
+
 
 </div>
 
