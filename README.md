@@ -17,6 +17,54 @@
 </div>
 
 ---
+## 🤝 Founder's Promise
+
+<div align="center">
+
+### Gen-Z Voice
+
+*"Look... I ain't build this to gate it off.
+I ain't grind through pain and fight through lies just to turn 'round and play the same game.
+
+I know what it feel like when doors close on you.
+I know what it feel like when faces switch up on you.
+I ain't gonna be that man.
+
+OBINexus? Heart work. Real work. Built so the next ones don't have to fight like I did.
+But understand—respect gonna live here too.
+You come with love, with truth, with vision—you welcome.
+You come with oppression, with cycles of harm—you out.
+
+That's balance. That's how I keep this pure.
+That's my promise to this work, and to myself.
+
+I ain't here to become what broke me.
+I'm here to build what heals us.*"
+
+### Professional Voice
+
+*"I did not build OBINexus to become a gatekeeper.
+I did not endure hardship and betrayal only to repeat those same patterns toward others.
+
+I know what it feels like to have doors closed unjustly.
+I know what it feels like to be harmed by those entrusted with power.
+I will not become one of them.
+
+OBINexus is built from the heart, with the intention to ease the path for those who come after me.
+
+However, this openness must be protected.
+Those who approach with sincerity, respect, and shared vision will be welcomed.
+Those who seek to exploit, oppress, or perpetuate cycles of harm will not be granted access to this space.
+
+This is the balance I must hold.
+This is the promise I make—to this work, and to myself.
+
+I will not become what once sought to break me.
+I will build what can heal us all."*
+
+</div>
+
+---
 
 ## 👋 Introduction: From Oxford to Language Engineering
 
